@@ -1,2 +1,1 @@
 # snow-crash
-# snow-crash
