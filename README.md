@@ -29,25 +29,25 @@ level00@SnowCrash:~$
 
 
 
-## Level00
+## [Level00](./level00/resources//README.md)
 유저가 flag00인 파일을 찾아 얻은 비밀번호를 rot 11로 복호화
 
-## level01
+## [Level01](./level01/resources//README.md)
 /etc/passwd에 비밀번호 섹션에 있는 flg01의 비밀번호를 얻어, john the rippser로 복호화
 
-## level02
+## [Level02](./level02/resources//README.md)
 pcap 파일을 wireshark로 확인하여 비밀번호를 획득한다. 
 1. tcp stream으로 변경
 2. ascii에서 .을 확인하기위해 hex dump로 확인
 3. .이 Del이므로, 해당 문자를 제거한다.
 
-## level03
+## [Level03](./level03/resources//README.md)
 level03의 홈에위치한 level03파일이 s권한이 있는걸확인후, ltrace로 확인.
 getflag가 들어간 echo를 임의로 level03실행파일에서 실행시키면된다.
 
-## level04
+## [Level04](./level01/resources//README.md)
 perl로 작성된 스크립트에서 localhost:4747을 알아낸후, curl로 유저확인 및 getflag실행
 
-## level05
+## [Level05](./level05/resources//README.md)
 /var/mail/level05에서, flag05권한으로 sh실행을하므로, 실행파일 확인후, getflag.sh 실행파일작성
 
