@@ -48,3 +48,6 @@ getflag가 들어간 echo를 임의로 level03실행파일에서 실행시키면
 ## level04
 perl로 작성된 스크립트에서 localhost:4747을 알아낸후, curl로 유저확인 및 getflag실행
 
+## level05
+/var/mail/level05에서, flag05권한으로 sh실행을하므로, 실행파일 확인후, getflag.sh 실행파일작성
+
