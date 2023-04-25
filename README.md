@@ -29,39 +29,40 @@ level00@SnowCrash:~$
 
 
 
-## [Level00](./level00/resources//README.md)
+## [Level00](./level00/resources/README.md)
 유저가 flag00인 파일을 찾아 얻은 비밀번호를 rot 11로 복호화
 
-## [Level01](./level01/resources//README.md)
+## [Level01](./level01/resources/README.md)
 /etc/passwd에 비밀번호 섹션에 있는 flg01의 비밀번호를 얻어, john the rippser로 복호화
 
-## [Level02](./level02/resources//README.md)
+## [Level02](./level02/resources/README.md)
 pcap 파일을 wireshark로 확인하여 비밀번호를 획득한다. 
 1. tcp stream으로 변경
 2. ascii에서 .을 확인하기위해 hex dump로 확인
 3. .이 Del이므로, 해당 문자를 제거한다.
 
-## [Level03](./level03/resources//README.md)
+## [Level03](./level03/resources/README.md)
 level03의 홈에위치한 level03파일이 s권한이 있는걸확인후, ltrace로 확인.
 getflag가 들어간 echo를 임의로 level03실행파일에서 실행시키면된다.
 
 ## [Level04](./level01/resources/README.md)
 perl로 작성된 스크립트에서 localhost:4747을 알아낸후, curl로 유저확인 및 getflag실행
 
-## [Level05](./level05/resources//README.md)
+## [Level05](./level05/resources/README.md)
 /var/mail/level05에서, flag05권한으로 sh실행을하므로, 실행파일 확인후, getflag.sh 실행파일작성
 
-## [Level06](./level06/resources//README.md)
+## [Level06](./level06/resources/README.md)
 php(shell_exec(getflag)) and regex
 
-## [Level07](./level07/resources//README.md)
+## [Level07](./level07/resources/README.md)
 set env with export, `, \
 
-## [Level08](./level08/resources//README.md)
+## [Level08](./level08/resources/README.md)
 Use a symbolic link to avoid using the file name 'token'
 
-## [Level09](./level09/resources//README.md)
+## [Level09](./level09/resources/README.md)
  encrypting algorithm with level09 and reverse it!
 
- ## [Level10](./level10/resources//README.md)
+ ## [Level10](./level10/resources/README.md)
  level10 바이너리를 이용하여 파일의 내용을 네트워크로 전송하는 과정에서 발생할 수 있는 취약점을 이용하여 토큰 파일의 내용을 가져오는 방법
+ race condition
