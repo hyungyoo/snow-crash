@@ -68,3 +68,9 @@ symbolic link를 이용한 Race Condition 기법을 활용하여 해결할 수 �
 
  ## [Level11](./level11/resources/README.md)
  connecter avec netcat and envoyer command comme password
+
+ ## [Level12](./level12/resources/README.md)
+pour miniscule, faire un scrtip en majuscule using level12.pl
+
+ ## [Level13](./level13/resources/README.md)
+ execute et verifier level 13 avec gdb et changer uid comme 4242
