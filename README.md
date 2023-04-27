@@ -64,5 +64,4 @@ Use a symbolic link to avoid using the file name 'token'
  encrypting algorithm with level09 and reverse it!
 
  ## [Level10](./level10/resources/README.md)
- level10 바이너리를 이용하여 파일의 내용을 네트워크로 전송하는 과정에서 발생할 수 있는 취약점을 이용하여 토큰 파일의 내용을 가져오는 방법
- race condition
+symbolic link를 이용한 Race Condition 기법을 활용하여 해결할 수 있는 문제
