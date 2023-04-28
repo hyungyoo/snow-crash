@@ -1,5 +1,7 @@
 # Level 09
 
+</br></br>
+
 ## ls -l
 ```zsh
 level09@SnowCrash:~$ ls -l
@@ -7,8 +9,9 @@ total 12
 -rwsr-sr-x 1 flag09 level09 7640 Mar  5  2016 level09
 ----r--r-- 1 flag09 level09   26 Mar  5  2016 token
 ```
+</br></br>
 
-## check files
+## Verifier Home
 ```zsh
 level09@SnowCrash:~$ ltrace ./level09 
 __libc_start_main(0x80487ce, 1, 0xbffff7f4, 0x8048aa0, 0x8048b10 <unfinished ...>
@@ -34,8 +37,9 @@ level09@SnowCrash:~$
 
 "You should not reverse this" => on doit le reverser
 
+</br></br>
 
-## create application en C
+## Créer un fichier exécutable en langage C
 ```c
 #include <stdio.h>
 #include <fcntl.h>
@@ -65,7 +69,11 @@ int main(void) {
 }
 
 ```
-## make application and apply to oken
+
+</br></br>
+
+## Appliquer token à l'exécutable
+
 ```zsh
 level09@SnowCrash:~$ mkdir /tmp/level09
 level09@SnowCrash:~$ cd /tmp/level09

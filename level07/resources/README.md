@@ -1,5 +1,7 @@
 # Level 07
 
+</br></br>
+
 ## file list in home
 ```zsh
 level07@SnowCrash:~$ ls -l
@@ -8,6 +10,8 @@ total 12
 ```
 
 un SUID executable existe!
+
+</br></br>
 
 ## check level07
 ```zsh
@@ -29,6 +33,8 @@ system("/bin/echo level07 "level07
 getenv("LOGNAME") = "level07"
 
 -> getenv("LOGNAME") = "\`getflag`\"
+
+</br></br>
 
 ## execute level07
 ```zsh

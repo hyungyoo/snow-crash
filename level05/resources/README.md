@@ -1,6 +1,8 @@
 # Level05
 
-## 메일확인
+</br></br>
+
+## vérifier e-mail
 
 ```zsh
 level05@SnowCrash:~$ ls /var/mail
@@ -9,7 +11,9 @@ level05@SnowCrash:~$ cat /var/mail/level05
 */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
 ```
 
-2분마다 /usr/sbin/openarenaserver 스크립트를 flag05 권한으로 실행한다는 내용입니다.
+Il dit d'exécuter le script /usr/sbin/openarenaserver avec l'autorisation flag05 toutes les 2 minutes.
+
+</br></br>
 
 ## /usr/sbin/openarenaserver
 
@@ -25,9 +29,11 @@ for i in /opt/openarenaserver/* ; do
 done
 ```
 
-이 스크립트는 /opt/openarenaserver/ 디렉토리 내의 모든 파일을 반복적으로 실행하고, 각 파일을 실행할 때 CPU 시간 제한을 5초로 설정합니다. 그런 다음 실행이 완료된 파일은 제거됩니다.
+Ce script exécute de manière récursive tous les fichiers du répertoire /opt/openarenaserver/ et définit un délai d'attente du processeur de 5 secondes pour chaque exécution de fichier. Ensuite, les fichiers dont l'exécution est terminée sont supprimés.
 
-## /opt/openarenaserver 내부에 getflag실행 파일 만들기
+</br></br>
+
+## Créer un exécutable getflag dans /opt/openarenaserver
 
 ```sh
 level05@SnowCrash:~$ mkdir /tmp/level05

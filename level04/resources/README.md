@@ -21,13 +21,14 @@ sub x {
 x(param("x"));
 ```
 
-이 스크립트는 Perl로 작성된 CGI(Common Gateway Interface) 스크립트입니다. 이것은 웹 서버와 같은 원격 컴퓨터의 외부에서 실행됩니다. 이 스크립트는 웹 브라우저를 통해 실행되어, GET 또는 POST 요청 매개 변수를 가져와서 x() 함수를 호출합니다.
+Ce script est un script CGI (Common Gateway Interface) écrit en Perl. Il s'exécute en dehors d'une machine distante comme un serveur Web. Ce script s'exécute via un navigateur Web, prend les paramètres de requête GET ou POST et appelle la fonction x().
 
-x() 함수는 매개 변수로 전달된 값을 $y 변수에 저장하고, echo 명령어를 통해 $y 변수를 출력합니다. 여기서 2>&1은 표준 오류 출력을 표준 출력으로 리다이렉션합니다.
+La fonction x() stocke la valeur passée en paramètre dans la variable $y et imprime la variable $y via la commande echo. Où 2>&1 redirige la sortie d'erreur standard vers la sortie standard.
 
-따라서, level04.pl 스크립트는 사용자가 전달한 매개 변수를 출력하는 것이며, 매개 변수에는 임의의 쉘 명령어를 전달할 수 있습니다. 이것은 명령어 인젝션 취약점으로 이어질 수 있습니다.
+Ainsi, le script level04.pl génère les paramètres transmis par l'utilisateur et vous pouvez transmettre des commandes shell arbitraires aux paramètres. Cela peut conduire à des vulnérabilités d'injection de commandes.
 
-## 매개변수 보내기
+## 
+Paramètres d'envoi
 
 ```zsh
 curl localhost:4747/?x=<parameter>

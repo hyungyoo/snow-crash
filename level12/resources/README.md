@@ -1,5 +1,7 @@
 # Level 12
 
+</br></br>
+
 ## check file level 12
 ```zsh
 level12@SnowCrash:~$ ls -al
@@ -44,7 +46,9 @@ sub n {
 
 n(t(param("x"), param("y")));
 ```
-c'est CGI donc on doit faire script!
+Étant donné que c'est un CGI, il est nécessaire de créer un script
+
+</br></br>
 
 ## make CGI file
 ```zsh
@@ -54,6 +58,8 @@ level12@SnowCrash:~$ cat /tmp/GETFLAG
 getflag > /tmp/flag
 level12@SnowCrash:~$ chmod +x /tmp/GETFLAG
 ```
+
+</br></br>
 
 ## execute
 connect to 

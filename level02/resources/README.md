@@ -1,6 +1,6 @@
 # Level02
 
-## 파일 확인
+## vérifier le fichier
 
 ```zsh
 level02@SnowCrash:~$ ls -al
@@ -13,11 +13,13 @@ d--x--x--x 1 root    users    340 Aug 30  2015 ..
 -r-x------ 1 level02 level02  675 Apr  3  2012 .profile
 ```
 
-## .pcap 파일
+## 
+fichier .pcap
 
-> pcap 파일은 "Packet Capture"의 약자로, 네트워크 패킷 정보를 캡처하고 저장하기 위한 파일 형식입니다. pcap 파일은 네트워크 패킷 분석 도구에서 사용되며, Wireshark, tcpdump, WinDump 등의 프로그램에서 사용할 수 있습니다. pcap 파일에 저장된 패킷 정보는 네트워크 문제 진단, 보안 분석 등 다양한 용도로 사용될 수 있습니다.
+> 
+Un fichier pcap signifie "Packet Capture" et est un format de fichier permettant de capturer et de stocker des informations sur les paquets réseau. Les fichiers pcap sont utilisés par les outils d'analyse de paquets réseau et peuvent être utilisés par des programmes tels que Wireshark, tcpdump et WinDump. Les informations sur les paquets stockées dans les fichiers pcap peuvent être utilisées à diverses fins, notamment pour diagnostiquer des problèmes de réseau et analyser la sécurité.
 
-### 1.로컬로 이동
+### 1.aller local
 
 ```zsh
 $>  scp -P 4242 level02@192.168.56.2:/home/user/level02/level02.pcap ./
@@ -35,7 +37,7 @@ $>  scp -P 4242 level02@192.168.56.2:/home/user/level02/level02.pcap ./
 level02@192.168.56.2's password:
 ```
 
-### 2. tcpdump사용
+### 2. Utiliser tcpdump
 
 ```zsh
 $> chmod +r ./level02.pcap
@@ -45,9 +47,9 @@ reading from file level02.pcap, link-type EN10MB (Ethernet)
         0x0030:  011b b987 000d 0a50 6173 7377 6f72 643a  .......Password:
 ```
 
-### 3. Wireshark로 패스워드 추출
+### 3. Extraire le mot de passe avec Wireshark
 
-- tcp를 tcp stream으로 변경 (순서대로 정렬)
+-  Changer tcp en flux tcp (trié dans l'ordre)
 
   follow -> tcp stream
 
@@ -66,7 +68,8 @@ reading from file level02.pcap, link-type EN10MB (Ethernet)
   wwwbugs login:
   ```
 
-- Hex dump로 변환
+- 
+Convertir en vidage hexadécimal
 
   ```zsh
   000000B9  66                                                 f
@@ -94,12 +97,12 @@ reading from file level02.pcap, link-type EN10MB (Ethernet)
 
 - 0x7F
 
-  - 0x7F는 ascii에서 Del을 뜻함
+  -  0x7F signifie Suppr en ascii
   - ft_wandr...NDRel.L0L =>
     ft_wand[DEL][del][DEL]NDRe[DEL]L0L
 
-    입력한 문자열에서 "DEL" 문자의 역할을 이해해야 합니다. "DEL"은 Backspace와 유사한 역할을 하며, 바로 앞의 문자를 지웁니다.
-    따라서 입력한 문자열에서 "DEL" 문자 뒤에 오는 문자들을 삭제하면 됩니다. 즉, "ft_w a n d r DEL DEL DEL N D R e l . L 0 L"에서 "ft_waNDReL0L"이 됩니다.
+    Vous devez comprendre le rôle du caractère "DEL" dans la chaîne saisie. "DEL" agit de la même manière que Backspace, supprimant le caractère immédiatement avant.
+    Par conséquent, vous pouvez supprimer les caractères suivant le caractère "DEL" dans la chaîne d'entrée. C'est-à-dire que "ft_w a n d r DEL DEL DEL N D R e l . L 0 L" devient " ft_waNDReL0L ".
 
 ## getflag
 

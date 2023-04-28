@@ -1,5 +1,7 @@
 # Level 13
 
+</br></br>
+
 ## check file
 ```zsh
 level13@SnowCrash:~$ ls -al
@@ -35,8 +37,9 @@ your token is %s
 ...
 ```
 
-on doit changer uid comme 4242 for get token
-donc, on peut le faire avec gdb
+On doit changer l'UID en 4242 pour obtenir le token, donc on peut le faire avec GDB.
+
+</br></br>
 
 ## gdb
 
@@ -79,6 +82,8 @@ Dump of assembler code for function main:
 ---Type <return> to continue, or q <return> to quit---
 ```
 
+</br></br>
+
 ici, 
 ```zsh
    0x08048595 <+9>:     call   0x8048380 <getuid@plt> // get uid
@@ -86,7 +91,9 @@ ici,
    0x0804859f <+19>:    je     0x80485cb <main+63>
 ```
 
-donc, en gdb, mettre le break point a  0x0804859a et changer eax comme 0x1092
+Donc, avec gdb, vous pouvez mettre un point d'arrêt à l'adresse 0x0804859a et changer la valeur de eax en 0x1092 pour modifier l'UID en 4242 et obtenir token.
+
+</br></br>
 
 ## break point and changer value
 ```zsh

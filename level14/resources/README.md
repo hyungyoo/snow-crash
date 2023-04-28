@@ -1,5 +1,7 @@
 # Level 14
 
+</br></br>
+
 ## check file
 ```zsh
 level14@SnowCrash:~$ ls -al
@@ -12,6 +14,8 @@ d--x--x--x 1 root    users    340 Aug 30  2015 ..
 ```
 
 scp -P 4242 -r ~/peda level14@192.168.56.101:/tmp
+
+</br></br>
 
 ## check getflag with gdb
 ```zsh
@@ -58,8 +62,7 @@ Dump of assembler code for function main:
 
 ```
 
-apres ptrace, eax est -1
-donc avec set eax doit etre 0 ou 1
+Après l'exécution de la fonction ptrace, la valeur de eax est -1. Par conséquent, il faut utiliser la commande 'set eax' pour la modifier en 0 ou 1.
 
 ```zsh
    0x08048989 <+67>:    call   0x8048540 <ptrace@plt>
@@ -90,6 +93,7 @@ $1 = -1
 Continuing.
 
 ```
+</br></br>
 
 ## getuid
 ```zsh

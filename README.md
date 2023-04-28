@@ -30,49 +30,52 @@ level00@SnowCrash:~$
 
 
 ## [Level00](./level00/resources/README.md)
-유저가 flag00인 파일을 찾아 얻은 비밀번호를 rot 11로 복호화
+Trouvez le fichier de l'utilisateur flag00 et déchiffrez le mot de passe obtenu avec rot 11
 
 ## [Level01](./level01/resources/README.md)
-/etc/passwd에 비밀번호 섹션에 있는 flg01의 비밀번호를 얻어, john the rippser로 복호화
+Obtenez le mot de passe de flg01 dans la section mot de passe de /etc/passwd et déchiffrez-le avec john the ripper
 
 ## [Level02](./level02/resources/README.md)
-pcap 파일을 wireshark로 확인하여 비밀번호를 획득한다. 
-1. tcp stream으로 변경
-2. ascii에서 .을 확인하기위해 hex dump로 확인
-3. .이 Del이므로, 해당 문자를 제거한다.
+le fichier pcap avec wireshark pour obtenir le mot de passe.
+1. Passer au flux TCP
+2. Vérifier avec le vidage hexadécimal pour vérifier .en ascii
+3. Puisque . est Del, supprimer ce caractère.
 
 ## [Level03](./level03/resources/README.md)
-level03의 홈에위치한 level03파일이 s권한이 있는걸확인후, ltrace로 확인.
-getflag가 들어간 echo를 임의로 level03실행파일에서 실행시키면된다.
+Après avoir confirmé que le fichier level03 situé dans le répertoire home de level03 dispose de l'autorisation s avec ltrace.
+Exécuter echo avec getflag dans le fichier exécutable level03.
 
 ## [Level04](./level01/resources/README.md)
-perl로 작성된 스크립트에서 localhost:4747을 알아낸후, curl로 유저확인 및 getflag실행
+Après avoir découvert localhost:4747 dans un script écrit en perl, en vérifiant l'utilisateur et en exécutant getflag avec curl
 
 ## [Level05](./level05/resources/README.md)
-/var/mail/level05에서, flag05권한으로 sh실행을하므로, 실행파일 확인후, getflag.sh 실행파일작성
+Dans /var/mail/level05, sh est exécuté avec l'autorité flag05, donc après avoir vérifié le fichier exécutable, écriver le fichier exécutable getflag.sh
 
 ## [Level06](./level06/resources/README.md)
-php(shell_exec(getflag)) and regex
+php(shell_exec(getflag)) et expressions régulières
 
 ## [Level07](./level07/resources/README.md)
-set env with export, `, \
+set env en utilisant export, `, \
 
 ## [Level08](./level08/resources/README.md)
-Use a symbolic link to avoid using the file name 'token'
+Utiliser un lien symbolique pour éviter d'utiliser le nom de fichier "token"
 
 ## [Level09](./level09/resources/README.md)
- encrypting algorithm with level09 and reverse it!
+inverser
 
  ## [Level10](./level10/resources/README.md)
-symbolic link를 이용한 Race Condition 기법을 활용하여 해결할 수 있는 문제
+Un problème qui peut être résolu en utilisant une technique de condition de concurrence à l'aide d'un lien symbolique
 
  ## [Level11](./level11/resources/README.md)
- connecter avec netcat and envoyer command comme password
+ connecter avec Netcat et envoyez la commande comme mot de passe
 
  ## [Level12](./level12/resources/README.md)
-pour miniscule, faire un scrtip en majuscule using level12.pl
+Il faut exécuter le CGI en tenant compte des minuscules et des majuscules."
 
  ## [Level13](./level13/resources/README.md)
- execute et verifier level 13 avec gdb et changer uid comme 4242
+  exécuter le niveau 13 et le vérifier avec gdb en changeant l'uid à 4242
+
+## [Level14](./level14/resources/README.md)
+Exécuter gdb pourle programme 'getflag' et changer l'UID en 'flag14'
 
  

