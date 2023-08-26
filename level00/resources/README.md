@@ -85,10 +85,9 @@ cdiiddwpgswtgt
 
 
 
-## Décoder en utilisant ROT 11
+## Décoder en utilisant site: https://www.dcode.fr/rot-cipher
 
 ```zsh
-level00@SnowCrash:~$  echo "cdiiddwpgswtgt" | tr 'a-zA-Z' 'L-ZA-Kl-za-k'
 nottoohardhere
 ```
 
