@@ -3,11 +3,9 @@
 </br>
 </br>
 
-
-
 ## Se connecter en tant que level00
 
-```zsh
+```sh
 $> ssh -l level00 [ip] -p 4242
 $> password: level00
 ```
@@ -15,11 +13,9 @@ $> password: level00
 </br>
 </br>
 
-
-
 ## Vérifier l'utilisateur
 
-```zsh
+```sh
 level00@SnowCrash:~$  whoami
 level00@SnowCrash:~$ level00
 
@@ -32,11 +28,9 @@ level00@SnowCrash:~$  level00
 </br>
 </br>
 
-
-
 ## Pour passer à l'utilisateur flag00, chercher les fichiers associés à l'utilisateur flag00
 
-```zsh
+```sh
 level00@SnowCrash:~$  find / -user flag00
 find: `/rofs/etc/ssl/private': Permission denied
 find: `/rofs/home': Permission denied
@@ -58,10 +52,9 @@ find: `/rofs/var/www/level12': Permission denied
 </br>
 </br>
 
-
-
 ## Supprimer les messages d'erreur "Permission denied"
-```zsh
+
+```sh
 level00@SnowCrash:~$   find / -user flag00 2>/dev/null | xargs ls -al
 ----r--r-- 1 flag00 flag00 15 Mar  5  2016 /rofs/usr/sbin/john
 ----r--r-- 1 flag00 flag00 15 Mar  5  2016 /usr/sbin/john
@@ -70,11 +63,9 @@ level00@SnowCrash:~$   find / -user flag00 2>/dev/null | xargs ls -al
 </br>
 </br>
 
-
-
 ## Vérifier le contenu des fichiers
 
-```zsh
+```sh
 level00@SnowCrash:~$  find / -user flag00 2>/dev/null  | xargs cat
 cdiiddwpgswtgt
 cdiiddwpgswtgt
@@ -83,22 +74,18 @@ cdiiddwpgswtgt
 </br>
 </br>
 
-
-
 ## Décoder en utilisant site: https://www.dcode.fr/rot-cipher
 
-```zsh
+```sh
 nottoohardhere
 ```
 
 </br>
 </br>
 
-
-
 ## Utiliser le mot de passe pour se connecter en tant qu'utilisateur flag00
 
-```zsh
+```sh
 level00@SnowCrash:~$ su flag00
 Password:
 
@@ -110,11 +97,9 @@ flag00@SnowCrash:~$
 </br>
 </br>
 
-
-
 ## Récupérer le flag
 
-```zsh
+```sh
 flag00@SnowCrash:~$ getflag
 Check flag.Here is your token : x24ti5gi3x0ol2eh4esiuxias
 flag00@SnowCrash:~$ su level01

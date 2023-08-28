@@ -1,13 +1,11 @@
 # Level01
 
-
 </br>
 </br>
-
 
 ## Accéder au mot de passe à partir de /etc/shadow
 
-```zsh
+```sh
 evel01@SnowCrash:~$ cat /etc/shadow
 cat: /etc/shadow: Permission denied
 level01@SnowCrash:~$ ls -al /etc/shadow
@@ -17,12 +15,9 @@ level01@SnowCrash:~$ ls -al /etc/shadow
 </br>
 </br>
 
-
-
 ## Accéder à /etc/passwd
 
-
-```zsh
+```sh
 landscape:x:104:110::/var/lib/landscape:/bin/false
 sshd:x:105:65534::/var/run/sshd:/usr/sbin/nologin
 level00:x:2000:2000::/home/user/level00:/bin/bash
@@ -57,6 +52,7 @@ flag13:x:3013:3013::/home/flag/flag13:/bin/bash
 flag14:x:3014:3014::/home/flag/flag14:/bin/bash
 
 ```
+
 Le fichier /etc/passwd est un fichier qui stocke les informations de base des comptes d'utilisateurs sur les systèmes Unix et Linux. Chaque ligne représente un compte d'utilisateur et contient plusieurs champs séparés par des virgules. La signification de chaque champ est la suivante :
 
 - Nom d'utilisateur (Username)
@@ -67,7 +63,7 @@ Le fichier /etc/passwd est un fichier qui stocke les informations de base des co
 - Chemin du répertoire personnel de l'utilisateur (User Home Directory Path)
 - Shell de connexion (Login Shell)
 
-on peut avoir "42hDRfypTqqnw" comme Mot de passe crypté 
+on peut avoir "42hDRfypTqqnw" comme Mot de passe crypté
 
 et
 
@@ -75,7 +71,6 @@ Pour casser un mot de passe haché, on utilise généralement l'outil de craquag
 
 </br>
 </br>
-
 
 ## Décrypter "42hDRfypTqqnw" avec john the ripper
 
@@ -85,13 +80,13 @@ Pour casser un mot de passe haché, on utilise généralement l'outil de craquag
 
 </br>
 
-```zsh
+```sh
 ➜  sgoinfre echo "42hDRfypTqqnw" > passwd
 ➜  sgoinfre ls
 assembly  john-1.9.0  john-1.9.0.tar.gz  passwd  snow-crash  uber
-➜  sgoinfre cat passwd 
+➜  sgoinfre cat passwd
 42hDRfypTqqnw
-➜  sgoinfre ./john-1.9.0/run/john ./passwd 
+➜  sgoinfre ./john-1.9.0/run/john ./passwd
 Loaded 1 password hash (descrypt, traditional crypt(3) [DES 128/128 SSE2])
 Press 'q' or Ctrl-C to abort, almost any other key for status
 abcdefg          (?)
@@ -104,12 +99,12 @@ Session completed
 1 password hash cracked, 0 left
 
 ```
+
 password: abcdefg
 
-
-```zsh
+```sh
 level01@SnowCrash:~$ su flag01
-Password: 
+Password:
 Don't forget to launch getflag !
 flag01@SnowCrash:~$ getflag
 Check flag.Here is your token : f2av5il02puano7naaf6adaaf

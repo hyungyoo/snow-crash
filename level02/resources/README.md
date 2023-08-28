@@ -2,7 +2,7 @@
 
 ## vérifier le fichier
 
-```zsh
+```sh
 level02@SnowCrash:~$ ls -al
 total 24
 dr-x------ 1 level02 level02  120 Mar  5  2016 .
@@ -21,13 +21,13 @@ fichier .pcap
 
 ### 1.aller local
 
-```zsh
+```sh
 level02@SnowCrash:~$ pwd
 /home/user/level02
 
 ```
 
-```zsh
+```sh
 $>  scp -P 4242 level02@192.168.56.2:/home/user/level02/level02.pcap ./
 
            _____                      _____               _
@@ -69,7 +69,7 @@ level02@192.168.56.2's password:
 
 ## getflag
 
-```zsh
+```sh
 level02@SnowCrash:~$ su flag02
 Password:
 Don't forget to launch getflag !

