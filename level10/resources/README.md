@@ -20,6 +20,7 @@ level10@SnowCrash:~$ ./level10
 ./level10 file host
         sends file to host if you have access to it
 ```
+"./level10 file host" signifie que l'on doit mettre file et host en tant que parametre
 
 </br></br>
 
