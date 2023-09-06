@@ -59,8 +59,7 @@ getflag > /tmp/flag
 level12@SnowCrash:~$ chmod +x /tmp/GETFLAG
 ```
 dans le pl script, le nom de fichier est changé en mascule.
-donc, on doit créer le fichier en mascule et avec "backtick".
-en tour cas, backtick et systemcall dans le code ou script,
+donc, on doit créer le fichier en mascule et avec "backtick" et avec "systemcall" dans le code ou script,
 on peut executer la commande
 
 </br></br>
