@@ -91,7 +91,7 @@ ici,
    0x0804859f <+19>:    je     0x80485cb <main+63>
 ```
 
-Donc, avec gdb, vous pouvez mettre un point d'arrêt à l'adresse 0x0804859a et changer la valeur de eax en 0x1092 pour modifier l'UID en 4242 et obtenir token.
+Donc, avec gdb, on peut mettre un point d'arrêt à l'adresse 0x0804859a et changer la valeur de eax en 0x1092 pour modifier l'UID en 4242 et obtenir token.
 
 </br></br>
 
