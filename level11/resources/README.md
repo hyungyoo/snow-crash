@@ -54,7 +54,14 @@ while 1 do
   client:close()
 end
 ```
+ce qui est important,
+</br></br>
+"echo "..pass.." | sha1sum", "r"
+i
+</br></br>
+on peut passer la commande en tant que parametre!
 
+</br></br>
 il faut connecter 127.0.0.1:5151
 
 </br></br>
