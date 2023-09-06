@@ -136,7 +136,7 @@ done
 
 ```zsh
 level10@SnowCrash:/tmp/link$ ./makeSymLink.sh
-level10@SnowCrash:/tmp/link$ while true; do ./level10 /tmp/link/link localhost:6969; done
+level10@SnowCrash:/tmp/link$ while true; do ./level10 /tmp/link/link localhost; done
 ```
 
 ```zsh
