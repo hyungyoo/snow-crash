@@ -2,24 +2,10 @@
 
 </br></br>
 
-## check file
-```zsh
-level14@SnowCrash:~$ ls -al
-total 12
-dr-x------ 1 level14 level14  100 Mar  5  2016 .
-d--x--x--x 1 root    users    340 Aug 30  2015 ..
--r-x------ 1 level14 level14  220 Apr  3  2012 .bash_logout
--r-x------ 1 level14 level14 3518 Aug 30  2015 .bashrc
--r-x------ 1 level14 level14  675 Apr  3  2012 .profile
-```
-
-scp -P 4242 -r ~/peda level14@192.168.56.101:/tmp
-
-</br></br>
-
 ## check getflag with gdb
+
 ```zsh
-level14@SnowCrash:~$ gdb getflag 
+level14@SnowCrash:~$ gdb getflag
 GNU gdb (Ubuntu/Linaro 7.4-2012.04-0ubuntu2.1) 7.4-2012.04
 Copyright (C) 2012 Free Software Foundation, Inc.
 License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
@@ -59,51 +45,44 @@ Dump of assembler code for function main:
    0x080489b8 <+114>:   mov    0x804b040,%eax
    0x080489bd <+119>:   mov    %eax,%edx
    0x080489bf <+121>:   mov    $0x8048fd0,%eax
+   ...
+   ...
 
 ```
 
-Après l'exécution de la fonction ptrace, la valeur de eax est -1. Par conséquent, il faut utiliser la commande 'set eax' pour la modifier en 0 ou 1.
-
-```zsh
-   0x08048989 <+67>:    call   0x8048540 <ptrace@plt>
-   0x0804898e <+72>:    test   %eax,%eax
-```
-
-break point 
-
-0x0804898e et getuid
-
-```zsh
-(gdb) b *0x0804898e
-Breakpoint 1 at 0x804898e
-(gdb) b getuid
-Breakpoint 2 at 0x80484b0
-(gdb) run
-```
-
-changer eax apres ptrace comme 1
-```zsh
-Starting program: /bin/getflag 
-
-Breakpoint 1, 0x0804898e in main ()
-(gdb) print $eax
-$1 = -1
-(gdb) set $eax=1
-(gdb) continue
-Continuing.
-
-```
+</br></br>
 </br></br>
 
-## getuid
+## break point
+
+</br></br>
+
 ```zsh
+level14@SnowCrash:~$ gdb getflag
+GNU gdb (Ubuntu/Linaro 7.4-2012.04-0ubuntu2.1) 7.4-2012.04
+Copyright (C) 2012 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "i686-linux-gnu".
+For bug reporting instructions, please see:
+<http://bugs.launchpad.net/gdb-linaro/>...
+Reading symbols from /bin/getflag...(no debugging symbols found)...done.
+(gdb) b *0x804898e
+Breakpoint 1 at 0x804898e
+(gdb) b *0x8048b02
+Breakpoint 2 at 0x8048b02
+(gdb) run
+Starting program: /bin/getflag
+
 Breakpoint 1, 0x0804898e in main ()
-(gdb) set $eax=1
+(gdb) set $eax = 0
 (gdb) continue
 Continuing.
 
 Breakpoint 2, 0x08048b02 in main ()
-(gdb) set $eax=3014
+(gdb) set $eax = 3014
 (gdb) finish
 "finish" not meaningful in the outermost frame.
 (gdb) step
@@ -111,7 +90,5 @@ Single stepping until exit from function main,
 which has no line number information.
 Check flag.Here is your token : 7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ
 0xb7e454d3 in __libc_start_main () from /lib/i386-linux-gnu/libc.so.6
+(gdb)
 ```
-
-
-
