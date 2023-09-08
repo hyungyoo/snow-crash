@@ -19,6 +19,52 @@ Dans le fichier level06, rws signifie lecture-écriture-exécution + setuid. Cel
 ## level06
 
 ```bash
+level06@SnowCrash:~$ nm ./level06
+08049f28 d _DYNAMIC
+08049ff4 d _GLOBAL_OFFSET_TABLE_
+080487cc R _IO_stdin_used
+         w _Jv_RegisterClasses
+08049f18 d __CTOR_END__
+08049f14 d __CTOR_LIST__
+08049f20 D __DTOR_END__
+08049f1c d __DTOR_LIST__
+08048a3c r __FRAME_END__
+08049f24 d __JCR_END__
+08049f24 d __JCR_LIST__
+0804a02c A __bss_start
+0804a024 D __data_start
+08048780 t __do_global_ctors_aux
+08048550 t __do_global_dtors_aux
+0804a028 D __dso_handle
+         w __gmon_start__
+08048772 T __i686.get_pc_thunk.bx
+08049f14 d __init_array_end
+08049f14 d __init_array_start
+08048770 T __libc_csu_fini
+08048700 T __libc_csu_init
+         U __libc_start_main@@GLIBC_2.0
+0804a02c A _edata
+0804a034 A _end
+080487ac T _fini
+080487c8 R _fp_hw
+08048380 T _init
+08048528 T _start
+0804864e T afterSubstr
+0804a02c b completed.6159
+0804a024 W data_start
+0804a030 b dtor_idx.6161
+         U execve@@GLIBC_2.0
+080485b0 t frame_dummy
+         U free@@GLIBC_2.0
+         U getegid@@GLIBC_2.0
+         U geteuid@@GLIBC_2.0
+0804867c T isLib
+08048450 T main
+         U setresgid@@GLIBC_2.0
+         U setresuid@@GLIBC_2.0
+         U strdup@@GLIBC_2.0
+080485f3 T syscall_gets
+080485d4 T syscall_open
 level06@SnowCrash:~$ strace ./level06
 ...
 ...
@@ -39,8 +85,10 @@ execve("/usr/bin/php", ["/usr/bin/php", "/home/user/level06/level06.php", "", ""
 
 level06 execute le fichier level06.php avec les privilèges root
 
-```
-level06@SnowCrash:~$ chomod 777 .
+ça doit être commancer
+
+```sh
+level06@SnowCrash:~$ chmod 777 .
 level06@SnowCrash:~$ ls
 level06  level06.php
 level06@SnowCrash:~$ rm -rf level06.php
