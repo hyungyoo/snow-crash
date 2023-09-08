@@ -113,6 +113,8 @@ faire fichier link
 ce fichier est symbolic link pour open (level10) et pour executer (token)
 
 ```zsh
+level10@SnowCrash:$ mkdir /tmp/link
+level10@SnowCrash:$ cd /tmp/link
 level10@SnowCrash:/tmp/link$ vim makeSymLink.sh
 level10@SnowCrash:/tmp/link$ ls
 makeSymLink.sh
